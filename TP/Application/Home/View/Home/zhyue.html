@@ -249,8 +249,8 @@
                     <li>
                         <a href="javascript:;"><em class="icon-count"></em>账户</a>
                         <ul class="level2">
-                            <li class="curr"><a href="./index.php?c=site&amp;a=entry&amp;do=my_wallet&amp;m=meepo_xianchang">我的账户</a></li>
-                            <li><a href="./index.php?c=site&amp;a=entry&amp;do=redpack_wallet&amp;m=meepo_xianchang">红包账户</a></li>
+                            <li class="curr"><a href="{:U('Lk/zhyue')}">我的账户</a></li>
+                            <li><a href="{:U('Lk/details')}">红包账户</a></li>
                             <li><a href="./index.php?c=site&amp;a=entry&amp;do=my_home&amp;m=meepo_xianchang">个人中心</a></li>
 
                         </ul>
@@ -376,10 +376,10 @@
             </style>
             <ul class="nav nav-tabs">
                 <li class="active">
-                    <a href="./index.php?c=site&amp;a=entry&amp;op=list&amp;do=my_wallet&amp;m=meepo_xianchang"><i class="fa fa-money" aria-hidden="true"></i> 账户余额</a>
+                    <a href="{:U('Lk/zhyue')}"><i class="fa fa-money" aria-hidden="true"></i> 账户余额</a>
                 </li>
                 <li>
-                    <a href="./index.php?c=site&amp;a=entry&amp;op=account&amp;do=my_wallet&amp;m=meepo_xianchang"><i class="fa fa-file-text" aria-hidden="true"></i> 账户设置</a>
+                    <a href="{:U('Lk/shezhi')}"></i> 账户设置</a>
                 </li>
             </ul>
             <div class="panel panel-default">
@@ -412,11 +412,12 @@
             </div>
             <script language="javascript" type="text/javascript">
             </script>
-            <form action="" method="post" class="form-horizontal" role="form" ng-controller="formCtrl" id="form2">
+
                 <div class="panel panel-default">
                     <div class="panel-heading">提现明细</div>
                     <div class="panel-body">
                         <table class="table table-hover" style="display:auto;">
+                            <form action="" method="post" class="form-horizontal" role="form" ng-controller="formCtrl" id="form2" enctype="multipart/form-data">
                             <thead class="navbar-inner">
                             <tr>
                                 <th style="width:5%;text-align:center">选？</th>
@@ -426,13 +427,15 @@
                                 <th style="width:25%;text-align:center">详细</th>
                             </tr>
                             </thead>
+            </form>
                             <tbody>
                             </tbody>
                             <tbody><tr>
                                 <td><input type="checkbox" onclick="var ck = this.checked;$(':checkbox').each(function(){this.checked = ck});"></td>
                                 <td colspan="12">
                                     <input type="submit" class="btn btn-pramary" name="down" value="导出选定数据">
-                                    <input type="submit" class="btn btn-pramary" name="downall" value="导出所有数据">
+                                    <a href="{:U('Lk/export')}">导出所有数据</a>
+                                    <!--<input type="submit" class="btn btn-pramary" name="downall" value="导出所有数据">-->
                                     <input type="hidden" name="token" value="7ea42ec0">
                                 </td>
                             </tr>
@@ -441,7 +444,7 @@
                         </div>
                     </div>
                 </div>
-            </form>
+
         </div>
         <!--slider css--->
         <link rel="stylesheet" href="__PUBLIC__/Home/css/boostrap.slider.css">

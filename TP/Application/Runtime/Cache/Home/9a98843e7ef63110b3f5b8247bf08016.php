@@ -249,7 +249,7 @@
                     <li>
                         <a href="javascript:;"><em class="icon-count"></em>账户</a>
                         <ul class="level2">
-                            <li><a href="./index.php?c=site&amp;a=entry&amp;do=my_wallet&amp;m=meepo_xianchang">我的账户</a></li>
+                            <li><a href="<?php echo U('Lk/zhyue');?>">我的账户</a></li>
                             <li class="curr"><a href="<?php echo U('Lk/details');?>">红包账户</a></li>
                             <li><a href="./index.php?c=site&amp;a=entry&amp;do=my_home&amp;m=meepo_xianchang">个人中心</a></li>
 
@@ -394,7 +394,7 @@
                     </p>
                 </div>
                 <div class="panel-body">
-                    <form action="" method="post" class="form-horizontal" role="form" onsubmit="return check_cz()">
+                    <form action="<?php echo U('Lk/chongzhi');?>" method="post" class="form-horizontal" role="form" onsubmit="return check_cz()">
                         <input type="hidden" value="" name="account_id">
                         <div class="form-group">
                             <label class="col-xs-12 col-sm-3 col-md-2 control-label"><span style="color:red">*</span><span class="label label-danger">充值金额</span></label>
@@ -452,14 +452,16 @@
                         <tbody>
 
                         </tbody>
-                        <!--<tr>
-                            <td><input type="checkbox" onclick="var ck = this.checked;$(':checkbox').each(function(){this.checked = ck});"></td>
-                            <td colspan="12">
-                                <input type="submit" class="btn btn-pramary" name="down" value="导出选定数据" />
-                                <input type="submit" class="btn btn-pramary" name="downall" value="导出所有数据" />
-                                <input type="hidden" name="token" value="7ea42ec0">
-                            </td>
-                        </tr>-->
+                        <tr>
+                            <td style="width:10%;text-align:center"></td>
+                            <?php if(is_array($res1)): foreach($res1 as $key=>$k): ?><td style="width:30%;text-align:center">
+                                <p>支付总金额:<span>{k.zongjine}</span></p>
+                                <p>充值金额:<span></span></p>
+                                <p>充值手续费:<span></span></p>
+                            </td><?php endforeach; endif; ?>
+                            <td style="width:20%;text-align:center"></td>
+                            <td style="width:40%;text-align:center"></td>
+                        </tr>
                     </table>
                     <div class="pager_box">
                     </div>
